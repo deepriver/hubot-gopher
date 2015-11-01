@@ -24,7 +24,7 @@ class Gopher
     "That’s it!": 22, "それだ!": 22
 
   emotion: (emotion_key) ->
-    file_name = printf '%02d', @sushiMap[emotion_key]
+    file_name = printf '%02d', @emotionMap[emotion_key]
     time = (new Date()).toISOString().replace(/[^0-9]/g, "")
     return @baseUrl + "#{file_name}.png?#{time}"
 
