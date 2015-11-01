@@ -27,7 +27,8 @@ class Gopher
     "That’s it!": 22, "それだ!": 22
 
   emotion: (emotion_key) ->
-    file_name = printf '%02d', @emotionMap[emotion_key]
+    defaultEmotion = _.sample _.keys @emotionMap
+    file_name = printf '%02d', @emotionMap[emotion_key] || @emotionMap[defaultEmotion]
     time = (new Date()).toISOString().replace(/[^0-9]/g, "")
     return @baseUrl + "#{file_name}.png?#{time}"
 
@@ -35,16 +36,16 @@ module.exports = (robot) ->
   gopher = new Gopher
 
 
-  robot.hear /Gopher/, (msg) ->
+  robot.hear /^Gopher$/, (msg) ->
     msg.send gopher.emotion("tira")
 
-  robot.hear /Gopherかわいい/, (msg) ->
+  robot.hear /^Gopherかわいい$/, (msg) ->
     msg.send gopher.emotion("kawaii")
 
   robot.hear /それだ!|:+1:|:thumbsup:/, (msg) ->
     msg.send gopher.emotion("That's it!")
 
-  robot.hear /:cry:/, (msg) ->
+  robot.hear /:cry:$/, (msg) ->
     msg.send gopher.emotion("cry")
 
   robot.respond /gopher ?(.*)/i, (msg) ->
