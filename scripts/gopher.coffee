@@ -15,6 +15,9 @@ class Gopher
 
   emotionMap:
     default: 1
+    tira: 5
+    lunch: 8
+    beer: 9
     ok: 14
     no: 15
     "good moning": 16
@@ -31,8 +34,18 @@ class Gopher
 module.exports = (robot) ->
   gopher = new Gopher
 
+
+  robot.hear /Gopher/, (msg) ->
+    msg.send gopher.emotion("tira")
+
+  robot.hear /Gopherかわいい/, (msg) ->
+    msg.send gopher.emotion("kawaii")
+
+  robot.hear /それだ!|:+1:|:thumbsup:/, (msg) ->
+    msg.send gopher.emotion("That's it!")
+
   robot.hear /:cry:/, (msg) ->
-    msg.send gopher.emotion("default")
+    msg.send gopher.emotion("cry")
 
   robot.respond /gopher ?(.*)/i, (msg) ->
     emote = msg.match[1]
