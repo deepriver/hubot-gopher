@@ -1,11 +1,16 @@
 {
   "name": "hubot-gopher",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "Domicile the Gopher to Hubot",
   "main": "index.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "gopher"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:deepriver/hubot-gopher.git"
@@ -15,6 +20,5 @@
   "dependencies": {
     "printf": "^0.2.3",
     "underscore": "^1.8.3"
-  },
-  "readme": "README.md"
+  }
 }
