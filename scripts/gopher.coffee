@@ -52,6 +52,9 @@ module.exports = (robot) ->
   robot.hear /^Gopherかわいい$/, (msg) ->
     msg.send gopher.emotion("kawaii")
 
+  robot.hear /^Gopherたすけて/, (msg) ->
+    msg.send gopher.emotion("yareyare")
+
   robot.hear /(ダメだこりゃ)$/, (msg) ->
     msg.send gopher.emotion("yareyare")
 
