@@ -40,7 +40,7 @@ module.exports = (robot) ->
 
 
   robot.hear /^Gopher$/, (msg) ->
-    num = Math.ceil(Math.rondom() * 3)
+    num = Math.ceil(Math.random() * 3)
     switch num
       when 1
         msg.send gopher.emotion("tira")
