@@ -1,7 +1,7 @@
 {
   "name": "hubot-gopher",
-  "version": "0.0.7",
-  "description": "",
+  "version": "0.0.8",
+  "description": "Domicile the Gopher to Hubot",
   "main": "index.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +15,6 @@
   "dependencies": {
     "printf": "^0.2.3",
     "underscore": "^1.8.3"
-  }
+  },
   "readme": "README.md"
 }
