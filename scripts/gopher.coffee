@@ -20,7 +20,7 @@ class Gopher
     beer: 9
     ok: 14
     no: 15
-    "good moning": 16
+    "good morning": 16
     cry: 2
     pretty: 20, kawaii: 20
     "?": 21, "question": 21
